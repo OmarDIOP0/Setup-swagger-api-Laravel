@@ -55,6 +55,107 @@
                     }
                 }
             }
+        },
+        "/api/product": {
+            "get": {
+                "summary": "Liste des Produits",
+                "operationId": "5cc57bec35d0f2045983cc8dcd00eccd",
+                "responses": {
+                    "200": {
+                        "description": "Liste des produits"
+                    },
+                    "400": {
+                        "description": "Erreur lors du listing"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a product",
+                "operationId": "a2a748b2864d35d1e50976b938ba8cd9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "description",
+                                    "price"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Product add successfull"
+                    },
+                    "401": {
+                        "description": "Failed add product"
+                    }
+                }
+            }
+        },
+        "/api/user/{id}": {
+            "put": {
+                "summary": "Update user with id",
+                "operationId": "d86eddd39187f00472b8418bc7f04d2e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Update user with id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User update successfull"
+                    },
+                    "401": {
+                        "description": "Failed to update user"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete user with id",
+                "operationId": "7a829f22666ca137b2a44b916afa168d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Update user with id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User delete successfull"
+                    },
+                    "401": {
+                        "description": "Failed to delete user"
+                    }
+                }
+            }
         }
     }
 }

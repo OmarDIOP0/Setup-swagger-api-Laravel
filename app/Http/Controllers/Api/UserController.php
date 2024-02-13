@@ -19,7 +19,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return response()->json($users);
+        $nbre =User::count();
+        // return response()->json($users);
+        return view('welcome',compact('users','nbre'));
     }
 
     /**
@@ -52,7 +54,8 @@ class UserController extends Controller
 
         // Vérification de la validation
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+            // return response()->json($validator->errors(), 422);
+            return redirect('/')->with('fail',$validator->errors());
         }
 
         // Création de l'utilisateur
@@ -64,6 +67,14 @@ class UserController extends Controller
         ]);
 
         // Retourner une réponse
-        return response()->json($user, 201);
+        // return response()->json($user, 201);
+        return redirect('/')->with('success','User add successfully');
     }
+
+    public function getForm()
+    {
+        return view('user');
+    }
+
+
 }

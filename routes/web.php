@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Api\UserController;
 
 /*
@@ -14,8 +15,7 @@ use App\Http\Controllers\Api\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/users', [UserController::class, 'index']);
-Route::post('/users', [UserController::class, 'store']);
+Route::get('/', [UserController::class,'index']);
+// Route::get('/api/users', [UserController::class, 'getForm']);
+Route::post('/api/users', [UserController::class, 'store']);
+Route::get('/api/product',[ProductController::class,'index']);
