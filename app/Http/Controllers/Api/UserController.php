@@ -39,6 +39,7 @@ class UserController extends Controller
      *     @OA\Response(response="422", description="Validation error")
      * )
      */
+
     public function store(Request $request)
     {
         // Validation des données

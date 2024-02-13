@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+
 /**
  * @OA\Info(
- *     title="Nouveau titre de mon API",
- *     version="1.0.0",
- *     description="Description de mon API"
- * )
+ * title="API DE GESTION DES PRODUITS",
+ * version="1.0.0",
+ * description="Api de gestion des produits"
+ * ),
  */
 
 class Controller extends BaseController

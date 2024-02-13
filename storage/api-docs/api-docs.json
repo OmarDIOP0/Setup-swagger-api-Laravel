@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Nouveau titre de mon API",
-        "description": "Description de mon API",
+        "title": "API DE GESTION DES PRODUITS",
+        "description": "Api de gestion des produits",
         "version": "1.0.0"
     },
     "paths": {
