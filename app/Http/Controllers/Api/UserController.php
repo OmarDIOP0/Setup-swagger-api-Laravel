@@ -75,6 +75,15 @@ class UserController extends Controller
     {
         return view('user');
     }
+    public function destroy(User $user,$id)
+    {
+      $affected=User::where('id',$id)->delete();
+      if($affected)
+      {
+        return redirect('/')->with('success','Suppression avec succes');
+      }
+      return back()->with('fail','Erreur lors de la suppression de l utilisateur');
+    }
 
 
 }

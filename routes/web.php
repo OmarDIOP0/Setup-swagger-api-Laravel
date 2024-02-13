@@ -19,3 +19,4 @@ Route::get('/', [UserController::class,'index']);
 // Route::get('/api/users', [UserController::class, 'getForm']);
 Route::post('/api/users', [UserController::class, 'store']);
 Route::get('/api/product',[ProductController::class,'index']);
+Route::get('/delete/{id}',[UserController::class,'destroy'])->name('delete-user');

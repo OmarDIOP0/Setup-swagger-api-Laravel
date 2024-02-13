@@ -9,7 +9,7 @@
 </head>
 <body>
     @if(Session::has('success'))
-    <div class="bg-primary border border-red-400 text-red-700 px-4 py-4 rounded relative" role="alert">
+    <div class="bg-primary border border-red-400 text-white px-4 py-4 rounded relative" role="alert">
         {{ Session::get('success') }}
     </div>
     @endif
@@ -47,6 +47,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +56,7 @@
                         <th scope="row">{{$user->id}}</th>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
+                        <td><button class="btn btn-danger"><a href="/delete/{{$user->id}}" style="text-decoration: none;color:white" onclick="return confirm('Etes vous sur ??')">DELETE</a></button></td>
                     </tr>
                     @endforeach
                 </tbody>
